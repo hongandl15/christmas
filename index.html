@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+</head>
+<style>
+    body{
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #buttonclick{
+        position: absolute;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+        color: rgb(238, 0, 40);
+        font-size: 100px;
+        text-align: center;
+        line-height: 800px;
+    }
+    #myVideo{
+        position: absolute;
+        top: -30%;
+        height: 150%
+    }
+
+</style>
+<script>
+    var order = [0,1]
+    var i = 0
+    function changeheart(){
+        if (i == 1) i = 0
+        else i = 1
+        var heart = "tree"+ order[i] + ".mp4"
+            document.getElementById('myVideo').src = heart;
+            document.getElementById('buttonclick').innerHTML = "";
+    }
+
+    document.getElementById('buttonclick').addEventListener('click', function() {
+        changeheart();
+    });
+</script>
+
+<body>
+    <video width="100%" autoplay muted loop id="myVideo">
+        <source id="myVideo" src="tree.mp4" type="video/mp4">
+    </video>
+  
+    <div id="buttonclick" onclick="">
+    </div>
+
+</body>
+</html>
